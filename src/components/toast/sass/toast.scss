@@ -1,0 +1,122 @@
+#toasted-container {
+  display: block;
+  position: fixed;
+  z-index: 10000;
+  .toasted {
+    top: 35px;
+    width: auto;
+    clear: both;
+    margin-top: 10px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 2px;
+    min-height: 50px;
+    background-color: #030303;
+    padding: 0 20px 0 50px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    &.success {
+      background-color: #51a351;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAYCAYAAAB5j+RNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9JREFUeNpi/P//P8NgBUwMgxgMbscxMjIyUAsDAQcwmRQA8WUgng3kKwwKXwIdw/Lv37/V/5EAlM9ALqaZw6CO+zygjsPlMKjjFg+Y4wg47DkQqwyI4wg5DEhpQNXR13HEOozujiPFYRQ7DkgIAHED0ODjQFwDZPNQy2EUOw5oaD+aJZeBWIYaDqOG4y7jyGkmlDqMGtHagMNSUAEaQInDqOE4HqAlh3FY/huIz5PrMKrkViCDA2jZ8v9EAmIdRtWiBGhpOzUdRvVyDmh5Big6qeEwmhTCQEd4QDMERQ6jWQ0BlDQAOmg9yJGg9AiqxMms6sjGjKMdnOHoOIAAAwA/ULMPJLXCLgAAAABJRU5ErkJggg==") !important;
+      background-repeat: no-repeat;
+      background-position: 5% 45%;
+    }
+
+    &.error {
+      background-color: #bd362f;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAYCAYAAAB5j+RNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAexJREFUeNrElzFLw0AUx3OhQ4YKGToU7FDBQffu4iD4ARxcHJxEcHB0cOgHUHDTTQQ3l466KXSo2MGhg4NQoQUrLViwYIbS+H/lCseR5M7mRQ/+vbvk5d0v9y53r04Yho6pwMaHqpPJ5AnaQjvnWBTynUZi+iNEJBCqCuo11Aew8ZV7A1Q16A56dl33NQ4uTRGS8hxtD/KlSoBZtnWC54eoWhBBU7sA5eFjnQOuDUdlC4gR7PK/8Z8GzpV11wA1hnYQvgV0l9C+df6gzOACg10TYNfTqRDiDTq1mOWAC65rsNMHGlv47nHBjTKIChvch8GuPIfvLhdc02DnaeupaOH7kQUOC7yRuB8IocP4Fr5fuOCGmI2W6QhLgI16oQZXWKnUDbZFBXTR8CJ1wA044R4MA1aUbsng94rjc88pYagBoJcQsj2ZjdD9zaTThHyxbEZq5oB06DhMWeDjJpOUCe0C1EHfm/NFAzy7SkccR8rkal8YLeKLmIHvoX3ojLKTGH8nMzD2sMp+HqFpa6H6VrcStI8iwtmhZzkzYTdif6KcbVe7RmGuyAE9mR2rEPQhbdCzrKdz3LrATBxGzE4b+tKuvaNayeI/ROKijQK0BcscTgJuQ58aFPWr6jr8Fzg5SBlAl1DfBooL7keAAQCLjhVwzd5s5wAAAABJRU5ErkJggg==") !important;
+      background-repeat: no-repeat;
+      background-position: 5% 45%;
+    }
+
+    &.info {
+      background-color: #2f96b4;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAYCAYAAAB5j+RNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcxJREFUeNq8lz1LA0EQhm8PyxQpLFOkOCEWFkGFdEZMYWFhEVCw8SfYibW/QSxVbCwUtRALhdhrISikUQgYsDBgQMEUIeezsMoR7mND5m7gZXdvZ2bfnZv9Ur7vO1qUUk6Y0F8Da1TnQN58boM7bM7AY4SdM7ZoJ2GO+DY5GAzO/QRB54AiH+V3HISSY8AV8O5bCrpv2iZ1cgyyHEPiK440fXVJciqYc9Rz4Il6MSIF5o3ufUR/h75p0JHIOXfI+W4UMRvBdhIf+46Q/EeO0qNoMsBEzOLpUnQtJrCoV7Nk5NbjiJnI5G0iyyQ2JCIXJLeQMOCpjgjlDGgn+K1Kk/MSolaH1JLrus80+wm6njQ5Gyk4GUqQXE/Kqd5SpMm9CE66LU3uUpDcrSg5kvjC7GM20ov5pX187UmT03myk5BHV0b3iHYUwRP6W6InxN99jsO7Qb0aQu6B4ts09eAV9EpDOi2+lUE3lfsc9RIEP/0RBZsPUMniPlcANyMQawIvk8tmgOQW+LEgd5zGTVhZvCH0HW+V6qx5Q+i8ewU5sI1dzqiWg++JVN8QlrZFonZtotfI9LeOQHLTLKKaJDlXZD9S6hBM4bAiefD/CjAAHqy2T6+q2tUAAAAASUVORK5CYII=") !important;
+      background-repeat: no-repeat;
+      background-position: 5% 45%;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #toasted-container {
+    min-width: 100%;
+    bottom: 0%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  #toasted-container {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  #toasted-container {
+    max-width: 86%;
+
+    &.top-right {
+      top: 3%;
+      right: 1%;
+    }
+
+    &.top-left {
+      top: 3%;
+      left: 1%;
+    }
+
+    &.top-center {
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.bottom-right {
+      right: 1%;
+      bottom: 3%;
+    }
+
+    &.bottom-left {
+      left: 1%;
+      bottom: 3%;
+    }
+
+    &.bottom-center {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 3%;
+    }
+
+    &.top-left .toasted, &.bottom-left .toasted {
+      float: left;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .toasted {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .toasted {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .toasted {
+    float: right;
+  }
+}
