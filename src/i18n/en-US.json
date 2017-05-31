@@ -1,0 +1,14 @@
+{
+  "locales": {
+    "en-US": "EN",
+    "zh-CN": "CN"
+  },
+  "login": {
+    "login": "Login",
+    "username":"Username",
+    "password":"Password",
+    "rememberme": "Remember me",
+    "dontHaveAnAccount": "Don't have an account yet ?",
+    "register": "Create an account"
+  }
+}

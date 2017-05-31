@@ -1,23 +1,30 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <v-confirm ref="confirm"></v-confirm>
+    <vue-progress-bar></vue-progress-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import vConfirm from './components/confirm/Confirm.vue';
+  import modalEventBind from './components/confirm/ConfirmEventBind';
+  import ConfirmApi from './components/confirm/ConfirmApi';
+
+  export default {
+    name: 'app',
+    components: {vConfirm},
+    mixins: [ConfirmApi],
+    mounted() {
+      modalEventBind(this.$refs.confirm);
+    }
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>

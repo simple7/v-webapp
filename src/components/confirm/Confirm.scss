@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.v-confirm {
+  background-color: rgba(0, 0, 0, .4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10050;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 500px;
+  transition: opacity .4s ease;
+}
+
+.v-dialog {
+  background: #FFF;
+  box-shadow: 3px 5px 20px #333;
+  transition: all 0.5s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  width: 300px;
+}
+.v-header{
+  padding: 0 80px 0 20px;
+  height: 42px;
+  line-height: 42px;
+  color: #333;
+  overflow: hidden;
+  background-color: #fff;
+}
+.v-line{
+  margin: 0 15px 0 15px;
+  border-top: 1px solid #000000;
+}
+.v-title{
+  font-size:19px;
+  font-weight: bold;
+}
+.v-close{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  line-height: initial !important;
+  opacity:1 !important;
+  color: #333 !important;
+  &:hover{
+    opacity:0.5 !important;
+  }
+}
+.v-body{
+  position: relative;
+  padding: 13px 20px;
+  line-height: 24px;
+  word-break: break-all;
+  overflow: hidden;
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.v-modal-prompt-form {
+  margin-top: 5px;
+}
+
+.v-modal-input {
+  height: 30px;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  padding: 0 5px;
+  outline: none;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+}
+
+.v-modal-input:focus {
+  border-color: #63c47d;
+}
+.v-footer{
+  text-align: right;
+  padding: 0 10px 12px;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  .btn{
+    margin:0 3px;
+    width: 60px;
+    border-radius: 2px !important;
+  }
+}
+
+
+.modal-enter, .modal-leave-active{
+  opacity: 0;
+}
+.modal-enter .v-dialog, .modal-leave-active .v-dialog {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
